@@ -5,32 +5,21 @@ import 'package:banten_apps/util/generate_util/gusanta_util.dart';
 import 'package:flutter/material.dart';
 
 var availableCategory = [
-  Category(
-      id: RandomIntId().gusantaIdGen(),
-      title: 'Galungan',
-      color: Colors.orange),
-  Category(
-      id: RandomIntId().gusantaIdGen(), title: 'Kuningan', color: Colors.red),
-  Category(
-      id: RandomIntId().gusantaIdGen(),
-      title: 'Pangerupukan',
-      color: Colors.blue),
-  Category(
-      id: RandomIntId().gusantaIdGen(),
-      title: 'Harian',
-      color: Colors.blueAccent),
-  Category(
-      id: RandomIntId().gusantaIdGen(), title: 'Odalan', color: Colors.green),
-  Category(
-      id: RandomIntId().gusantaIdGen(),
-      title: 'Saraswati',
-      color: Colors.purple),
+  const Category(id: '1', title: 'Galungan', color: Colors.orange),
+  const Category(id: '2', title: 'Kuningan', color: Colors.red),
+  const Category(id: '3', title: 'Pangerupukan', color: Colors.blue),
+  const Category(id: '4', title: 'Harian', color: Colors.blueAccent),
+  const Category(id: '5', title: 'Odalan', color: Colors.green),
+  const Category(id: '6', title: 'Saraswati', color: Colors.purple),
 ];
 
 var listOfBanten = [
   BantenModels(
       id: RandomIntId().gusantaIdGen(),
+      category: ['1', '2'],
       name: Type.jawa.toRecord().name,
+      imageUrl:
+          'https://image.freepik.com/free-vector/404-error-abstract-concept-illustration_335657-2243.jpg',
       sugihan: Type.jawa,
       ingredients: [
         'busung',
@@ -43,7 +32,10 @@ var listOfBanten = [
       description: 'description'),
   BantenModels(
       id: RandomIntId().gusantaIdGen(),
+      category: ['1', '2'],
       name: BantenSebelum.pengerebuan.toRecord().name,
+      imageUrl:
+          'https://image.freepik.com/free-vector/404-error-abstract-concept-illustration_335657-2243.jpg',
       sugihan: Type.bukan,
       ingredients: ['not found'],
       listBanten: [
@@ -60,7 +52,10 @@ var listOfBanten = [
       description: 'description'),
   BantenModels(
       id: RandomIntId().gusantaIdGen(),
+      category: ['1', '2'],
       name: Type.bali.toRecord().name,
+      imageUrl:
+          'https://image.freepik.com/free-vector/404-error-abstract-concept-illustration_335657-2243.jpg',
       sugihan: Type.bali,
       ingredients: ['not found'],
       listBanten: ['Sesodan'],
@@ -69,7 +64,10 @@ var listOfBanten = [
       description: 'description'),
   BantenModels(
       id: RandomIntId().gusantaIdGen(),
-      name: BantenSebelum.penampan.toRecord().name,
+      category: ['1', '2'],
+      name: BantenSebelum.penyajan.toRecord().name,
+      imageUrl:
+          'https://image.freepik.com/free-vector/404-error-abstract-concept-illustration_335657-2243.jpg',
       sugihan: Type.bukan,
       ingredients: ['not found'],
       listBanten: ['not found'],
@@ -78,7 +76,10 @@ var listOfBanten = [
       description: 'description'),
   BantenModels(
       id: RandomIntId().gusantaIdGen(),
+      category: ['1', '2'],
       name: BantenSebelum.penampan.toRecord().name,
+      imageUrl:
+          'https://image.freepik.com/free-vector/404-error-abstract-concept-illustration_335657-2243.jpg',
       sugihan: Type.bukan,
       ingredients: ['not found'],
       listBanten: ['not found'],

@@ -1,4 +1,3 @@
-import 'package:banten_apps/data/dummy_category.dart';
 import 'package:banten_apps/models/banten_models.dart';
 import 'package:banten_apps/widgets/banten_grid.dart';
 import 'package:flutter/material.dart';
@@ -12,19 +11,45 @@ class BantenScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget content = ListView.builder(
+      itemCount: banten.length,
       itemBuilder: (context, index) {
-        Text(banten[index].name);
+        return BantenGridItem(bantenModels: banten[index]);
       },
     );
+
+    if (banten.isNotEmpty) {
+      content;
+    }
 
     if (banten.isEmpty) {
       content = Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          children: const [
-            Text('ups ....'),
-            Text('there are no content ....'),
-            Text('lets pick some category ....'),
+          children: [
+            Text(
+              'ups ....',
+              style: Theme.of(context)
+                  .textTheme
+                  .titleLarge!
+                  .copyWith(color: Theme.of(context).colorScheme.primary),
+            ),
+            Text(
+              'there are no content ....',
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyLarge!
+                  .copyWith(color: Theme.of(context).colorScheme.primary),
+            ),
+            const SizedBox(
+              height: 29,
+            ),
+            Text(
+              'lets pick some category ....',
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyLarge!
+                  .copyWith(color: Theme.of(context).colorScheme.primary),
+            ),
           ],
         ),
       );

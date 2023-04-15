@@ -1,9 +1,10 @@
-
 class BantenModels {
   const BantenModels(
       {required this.id,
+      required this.category,
       required this.name,
-      required this.sugihan,  
+      required this.imageUrl,
+      required this.sugihan,
       required this.listBanten,
       required this.ingredients,
       required this.sebelumGalungan,
@@ -11,7 +12,9 @@ class BantenModels {
       required this.description});
 
   final int id;
+  final List<String> category;
   final String name;
+  final String imageUrl;
   final Enum sugihan;
   final List<String> listBanten;
   final List<String> ingredients;
