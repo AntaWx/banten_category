@@ -1,4 +1,6 @@
+import 'package:banten_apps/data/dummy_category.dart';
 import 'package:banten_apps/models/banten_models.dart';
+import 'package:banten_apps/screens/detail_screen.dart';
 import 'package:banten_apps/widgets/banten_grid.dart';
 import 'package:flutter/material.dart';
 
@@ -8,12 +10,30 @@ class BantenScreen extends StatelessWidget {
   final String title;
   final List<BantenModels> banten;
 
+  void _onSelectBanten(BuildContext context, BantenModels bantenModels) {
+    final filteredBanten =
+        listOfBanten.firstWhere((banten) => banten.id == bantenModels.id);
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (ctx) => DetailScreen(
+                  title: bantenModels.name,
+                  description: filteredBanten.description,
+                  bantenModels: [filteredBanten],
+                )));
+  }
+
   @override
   Widget build(BuildContext context) {
     Widget content = ListView.builder(
       itemCount: banten.length,
       itemBuilder: (context, index) {
-        return BantenGridItem(bantenModels: banten[index]);
+        return BantenGridItem(
+          bantenModels: banten[index],
+          onSelectBanten: () {
+            _onSelectBanten(context, banten[index]);
+          },
+        );
       },
     );
 

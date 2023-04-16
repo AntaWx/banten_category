@@ -48,3 +48,75 @@ extension TypeSugihanExtension on Type {
     }
   }
 }
+
+class ExecutionTime {
+  final String time;
+
+  const ExecutionTime(this.time);
+
+  @override
+  String toString() => time;
+}
+
+enum Execution { sebelum, sesudah, saat }
+
+extension ExecutionTimeExtention on Execution {
+  ExecutionTime toRecord() {
+    switch (this) {
+      case Execution.sebelum:
+        return const ExecutionTime('sebelum galungan');
+      case Execution.sesudah:
+        return const ExecutionTime('sesudah galungan');
+      case Execution.saat:
+        return const ExecutionTime('saat galungan');
+    }
+  }
+}
+
+class Dificulty {
+  final String dificult;
+
+  const Dificulty(this.dificult);
+
+  @override
+  String toString() => dificult;
+}
+
+enum DificultyEnum { easy, normal, hard }
+
+extension DificultyExtention on DificultyEnum {
+  Dificulty toRecord() {
+    switch (this) {
+      case DificultyEnum.easy:
+        return const Dificulty('easy');
+      case DificultyEnum.normal:
+        return const Dificulty('normal');
+      case DificultyEnum.hard:
+        return const Dificulty('hard');
+    }
+  }
+}
+
+class Affordability {
+  final String affordability;
+
+  const Affordability(this.affordability);
+
+  @override
+  String toString() => affordability;
+}
+
+enum AffordabilityEnum { affordable, quiteAffordable, unreachable }
+
+extension AffordabilityExtention on AffordabilityEnum {
+  Affordability toRecord() {
+    switch (this) {
+      case AffordabilityEnum.affordable:
+        return const Affordability('terjangkau');
+      case AffordabilityEnum.quiteAffordable:
+        return const Affordability('lumayan terjangkau');
+      case AffordabilityEnum.unreachable:
+        return const Affordability('tidak terjangkau');
+    }
+  }
+}

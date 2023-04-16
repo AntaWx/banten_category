@@ -1,21 +1,23 @@
 import 'package:banten_apps/models/banten_models.dart';
+import 'package:banten_apps/widgets/banten_item_trait.dart';
 import 'package:flutter/material.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class BantenGridItem extends StatelessWidget {
-  const BantenGridItem({super.key, required this.bantenModels});
+  const BantenGridItem({super.key, required this.bantenModels,required this.onSelectBanten});
 
   final BantenModels bantenModels;
+  final void Function() onSelectBanten;
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.all(8),
+      margin: const EdgeInsets.all(8),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
       clipBehavior: Clip.hardEdge,
       elevation: 20,
       child: InkWell(
-          onTap: () {},
+          onTap: onSelectBanten,
           child: Stack(
             children: [
               FadeInImage(
@@ -50,7 +52,24 @@ class BantenGridItem extends StatelessWidget {
                           height: 10,
                         ),
                         Row(
-                          children: [],
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            BantenItemTrait(
+                                icon: Icons.schedule,
+                                label: bantenModels.executionTime),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            BantenItemTrait(
+                                icon: Icons.star,
+                                label: bantenModels.dificulty),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            BantenItemTrait(
+                                icon: Icons.attach_money,
+                                label: bantenModels.affordability),
+                          ],
                         )
                       ],
                     ),

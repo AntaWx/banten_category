@@ -15,7 +15,7 @@ var availableCategory = [
 
 var listOfBanten = [
   BantenModels(
-      id: RandomIntId().gusantaIdGen(),
+      id: RandomIntId().gusantaIdGen().toString(),
       category: ['1', '2'],
       name: Type.jawa.toRecord().name,
       imageUrl:
@@ -27,11 +27,12 @@ var listOfBanten = [
         'raka tamas',
       ],
       listBanten: ['Sesodan'],
-      sebelumGalungan: true,
-      sesudahGalungan: false,
+      executionTime: Execution.sebelum.toRecord().time,
+      dificulty: DificultyEnum.normal.toRecord().dificult,
+      affordability: AffordabilityEnum.affordable.toRecord().affordability,
       description: 'description'),
   BantenModels(
-      id: RandomIntId().gusantaIdGen(),
+      id: RandomIntId().gusantaIdGen().toString(),
       category: ['1', '2'],
       name: BantenSebelum.pengerebuan.toRecord().name,
       imageUrl:
@@ -47,11 +48,12 @@ var listOfBanten = [
         'raka',
         'tumpeng'
       ],
-      sebelumGalungan: true,
-      sesudahGalungan: false,
-      description: 'description'),
+      executionTime: Execution.sebelum.toRecord().time,
+      dificulty: DificultyEnum.normal.toRecord().dificult,
+      affordability: AffordabilityEnum.affordable.toRecord().affordability,
+      description: 'not found'),
   BantenModels(
-      id: RandomIntId().gusantaIdGen(),
+      id: RandomIntId().gusantaIdGen().toString(),
       category: ['1', '2'],
       name: Type.bali.toRecord().name,
       imageUrl:
@@ -59,11 +61,12 @@ var listOfBanten = [
       sugihan: Type.bali,
       ingredients: ['not found'],
       listBanten: ['Sesodan'],
-      sebelumGalungan: true,
-      sesudahGalungan: false,
+      executionTime: Execution.sebelum.toRecord().time,
+      dificulty: DificultyEnum.normal.toRecord().dificult,
+      affordability: AffordabilityEnum.affordable.toRecord().affordability,
       description: 'description'),
   BantenModels(
-      id: RandomIntId().gusantaIdGen(),
+      id: RandomIntId().gusantaIdGen().toString(),
       category: ['1', '2'],
       name: BantenSebelum.penyajan.toRecord().name,
       imageUrl:
@@ -71,11 +74,12 @@ var listOfBanten = [
       sugihan: Type.bukan,
       ingredients: ['not found'],
       listBanten: ['not found'],
-      sebelumGalungan: true,
-      sesudahGalungan: false,
+      executionTime: Execution.sebelum.toRecord().time,
+      dificulty: DificultyEnum.normal.toRecord().dificult,
+      affordability: AffordabilityEnum.affordable.toRecord().affordability,
       description: 'description'),
   BantenModels(
-      id: RandomIntId().gusantaIdGen(),
+      id: RandomIntId().gusantaIdGen().toString(),
       category: ['1', '2'],
       name: BantenSebelum.penampan.toRecord().name,
       imageUrl:
@@ -83,7 +87,8 @@ var listOfBanten = [
       sugihan: Type.bukan,
       ingredients: ['not found'],
       listBanten: ['not found'],
-      sebelumGalungan: true,
-      sesudahGalungan: false,
+      executionTime: Execution.sebelum.toRecord().time,
+      dificulty: DificultyEnum.normal.toRecord().dificult,
+      affordability: AffordabilityEnum.affordable.toRecord().affordability,
       description: 'description'),
 ];

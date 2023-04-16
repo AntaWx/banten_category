@@ -12,11 +12,11 @@ class BantenItemTrait extends StatelessWidget {
       children: [
         Icon(icon, size: 20, color: Colors.white),
         const SizedBox(
-          width: 10,
+          width: 2,
         ),
         Text(
           label,
-          style: Theme.of(context).textTheme.titleLarge,
+          style: TextStyle(color: Theme.of(context).colorScheme.primary),
         ),
       ],
     );

@@ -8,14 +8,14 @@ class Categories extends StatelessWidget {
   const Categories({super.key});
 
   void _selectCategory(BuildContext context, Category category) {
-    final filteredBanten = listOfBanten
+    final filteredCategory = listOfBanten
         .where((banten) => banten.category.contains(category.id))
         .toList();
     Navigator.push(
         context,
         MaterialPageRoute(
             builder: (ctx) =>
-                BantenScreen(title: category.title, banten: filteredBanten)));
+                BantenScreen(title: category.title, banten: filteredCategory)));
   }
 
   @override
@@ -25,7 +25,7 @@ class Categories extends StatelessWidget {
         title: const Text('pick your category'),
       ),
       body: GridView(
-        padding: EdgeInsets.all(24),
+        padding: const EdgeInsets.all(24),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             childAspectRatio: 4 / 3,
