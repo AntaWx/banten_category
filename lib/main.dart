@@ -1,8 +1,9 @@
 import 'package:banten_apps/screens/categories.dart';
+import 'package:banten_apps/screens/tabs_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
- 
+
 final theme = ThemeData(
     useMaterial3: true,
     colorScheme: ColorScheme.fromSeed(
@@ -21,10 +22,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false ,
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: theme,
-      home: const Categories(),
+      home: const TabsScreen(),
     );
   }
 }

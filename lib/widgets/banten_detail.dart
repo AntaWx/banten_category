@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class BantenDetail extends StatelessWidget {
@@ -16,8 +15,6 @@ class BantenDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double userHeight = MediaQuery.of(context).size.height;
-
     return Container(
       margin: const EdgeInsets.all(5),
       padding: const EdgeInsets.all(5),
@@ -54,33 +51,33 @@ class BantenDetail extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 25),
+          Text(
+            'Deskripsi',
+            style: Theme.of(context)
+                .textTheme
+                .titleLarge!
+                .copyWith(color: Colors.amber),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
-            children: [
-              LayoutBuilder(
-                builder: (context, constraints) {
-                  return Container(
-                    height: userHeight * 0.48,
-                    child: ListView.builder(
-                      itemCount: description.length,
-                      itemBuilder: (context, index) {
-                        return Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 8.0),
-                          child: Text(
-                            description[index],
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyLarge!
-                                .copyWith(color: Colors.white),
-                          ),
-                        );
-                      },
-                    ),
-                  );
-                },
-              ),
-            ],
+            children: description.map((element) {
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                child: Text(
+                  element,
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyLarge!
+                      .copyWith(color: Colors.white),
+                ),
+              );
+            }).toList(),
           ),
         ],
       ),

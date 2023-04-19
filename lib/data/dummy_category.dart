@@ -33,7 +33,6 @@ var listOfBanten = [
       description: [
         'Kamis Wage Sungsang disebut dengan parerebon atau yang lebih dikenal dengan Sugihan Jawa. Dinamakan sugihan jawa karena merupakan hari suci bagi para Bhatara untuk melakukan rerebu di sanggah dan parahyangan, yang disertai pangraratan dan pembersihan untuk Bhatara dengan kembang wangi. Orang yang memiliki kemampuan dalam hal tatwa akan melakukan yoga semadhi, pendeta akan melakukan pemujaan tertinggi, karena Bhatara pada hari ini turun ke dunia diiringi oleh para Dewa Pitara untuk persembahan hingga Galungan nanti.',
         'Rerebu atau marerebon ini bertujuan untuk menetralisir kekuatan negatif yang ada pada alam semesta atau Bhuana Agung.',
-        'Untuk persembahannya lebih lanjut dikatakan:',
         'Pakreti nikang wwang, sasayut mwang tutwang, pangarad kasukan ngaranya.',
         'Sesajennya yaitu sesayut tutwan atau pangarad kasukan.',
       ]),
