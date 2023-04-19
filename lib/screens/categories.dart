@@ -21,6 +21,7 @@ class Categories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromRGBO(33, 25, 37, 1),
       appBar: AppBar(
         title: const Text('pick your category'),
       ),

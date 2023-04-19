@@ -8,11 +8,13 @@ class DetailScreen extends StatelessWidget {
     super.key,
     required this.title,
     required this.description,
+    required this.image,
     required this.bantenModels,
   });
 
   final String title;
-  final String description;
+  final List<String> description;
+  final String image;
   final List<BantenModels> bantenModels;
 
   @override
@@ -36,6 +38,7 @@ class DetailScreen extends StatelessWidget {
               BantenDetail(
                 title: title,
                 description: description,
+                image: image,
               ),
             ],
           ),

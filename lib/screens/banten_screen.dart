@@ -19,6 +19,7 @@ class BantenScreen extends StatelessWidget {
             builder: (ctx) => DetailScreen(
                   title: bantenModels.name,
                   description: filteredBanten.description,
+                  image: filteredBanten.imageUrl,
                   bantenModels: [filteredBanten],
                 )));
   }

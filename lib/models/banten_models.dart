@@ -22,5 +22,5 @@ class BantenModels {
   final String executionTime;
   final String dificulty;
   final String affordability;
-  final String description;
+  final List<String> description;
 }

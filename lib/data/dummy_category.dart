@@ -19,7 +19,7 @@ var listOfBanten = [
       category: ['1', '2'],
       name: Type.jawa.toRecord().name,
       imageUrl:
-          'https://image.freepik.com/free-vector/404-error-abstract-concept-illustration_335657-2243.jpg',
+          'https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1634025439/01811e4ca70ef66c3255d0684210b8df.jpg',
       sugihan: Type.jawa,
       ingredients: [
         'busung',
@@ -30,7 +30,13 @@ var listOfBanten = [
       executionTime: Execution.sebelum.toRecord().time,
       dificulty: DificultyEnum.normal.toRecord().dificult,
       affordability: AffordabilityEnum.affordable.toRecord().affordability,
-      description: 'description'),
+      description: [
+        'Kamis Wage Sungsang disebut dengan parerebon atau yang lebih dikenal dengan Sugihan Jawa. Dinamakan sugihan jawa karena merupakan hari suci bagi para Bhatara untuk melakukan rerebu di sanggah dan parahyangan, yang disertai pangraratan dan pembersihan untuk Bhatara dengan kembang wangi. Orang yang memiliki kemampuan dalam hal tatwa akan melakukan yoga semadhi, pendeta akan melakukan pemujaan tertinggi, karena Bhatara pada hari ini turun ke dunia diiringi oleh para Dewa Pitara untuk persembahan hingga Galungan nanti.',
+        'Rerebu atau marerebon ini bertujuan untuk menetralisir kekuatan negatif yang ada pada alam semesta atau Bhuana Agung.',
+        'Untuk persembahannya lebih lanjut dikatakan:',
+        'Pakreti nikang wwang, sasayut mwang tutwang, pangarad kasukan ngaranya.',
+        'Sesajennya yaitu sesayut tutwan atau pangarad kasukan.',
+      ]),
   BantenModels(
       id: RandomIntId().gusantaIdGen().toString(),
       category: ['1', '2'],
@@ -51,7 +57,7 @@ var listOfBanten = [
       executionTime: Execution.sebelum.toRecord().time,
       dificulty: DificultyEnum.normal.toRecord().dificult,
       affordability: AffordabilityEnum.affordable.toRecord().affordability,
-      description: 'not found'),
+      description: ['not found']),
   BantenModels(
       id: RandomIntId().gusantaIdGen().toString(),
       category: ['1', '2'],
@@ -64,7 +70,7 @@ var listOfBanten = [
       executionTime: Execution.sebelum.toRecord().time,
       dificulty: DificultyEnum.normal.toRecord().dificult,
       affordability: AffordabilityEnum.affordable.toRecord().affordability,
-      description: 'description'),
+      description: ['description']),
   BantenModels(
       id: RandomIntId().gusantaIdGen().toString(),
       category: ['1', '2'],
@@ -77,7 +83,7 @@ var listOfBanten = [
       executionTime: Execution.sebelum.toRecord().time,
       dificulty: DificultyEnum.normal.toRecord().dificult,
       affordability: AffordabilityEnum.affordable.toRecord().affordability,
-      description: 'description'),
+      description: ['description']),
   BantenModels(
       id: RandomIntId().gusantaIdGen().toString(),
       category: ['1', '2'],
@@ -90,5 +96,5 @@ var listOfBanten = [
       executionTime: Execution.sebelum.toRecord().time,
       dificulty: DificultyEnum.normal.toRecord().dificult,
       affordability: AffordabilityEnum.affordable.toRecord().affordability,
-      description: 'description'),
+      description: ['description']),
 ];
