@@ -20,7 +20,7 @@ var listOfBanten = [
       name: Type.jawa.toRecord().name,
       imageUrl:
           'https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1634025439/01811e4ca70ef66c3255d0684210b8df.jpg',
-      sugihan: Type.jawa,
+      sugihan: true,
       ingredients: [
         'busung',
         'tamas',
@@ -42,7 +42,7 @@ var listOfBanten = [
       name: BantenSebelum.pengerebuan.toRecord().name,
       imageUrl:
           'https://image.freepik.com/free-vector/404-error-abstract-concept-illustration_335657-2243.jpg',
-      sugihan: Type.bukan,
+      sugihan: false,
       ingredients: ['not found'],
       listBanten: [
         'banten sodan',
@@ -63,7 +63,7 @@ var listOfBanten = [
       name: Type.bali.toRecord().name,
       imageUrl:
           'https://image.freepik.com/free-vector/404-error-abstract-concept-illustration_335657-2243.jpg',
-      sugihan: Type.bali,
+      sugihan: true,
       ingredients: ['not found'],
       listBanten: ['Sesodan'],
       executionTime: Execution.sebelum.toRecord().time,
@@ -76,7 +76,7 @@ var listOfBanten = [
       name: BantenSebelum.penyajan.toRecord().name,
       imageUrl:
           'https://image.freepik.com/free-vector/404-error-abstract-concept-illustration_335657-2243.jpg',
-      sugihan: Type.bukan,
+      sugihan: false,
       ingredients: ['not found'],
       listBanten: ['not found'],
       executionTime: Execution.sebelum.toRecord().time,
@@ -89,7 +89,7 @@ var listOfBanten = [
       name: BantenSebelum.penampan.toRecord().name,
       imageUrl:
           'https://image.freepik.com/free-vector/404-error-abstract-concept-illustration_335657-2243.jpg',
-      sugihan: Type.bukan,
+      sugihan: false,
       ingredients: ['not found'],
       listBanten: ['not found'],
       executionTime: Execution.sebelum.toRecord().time,

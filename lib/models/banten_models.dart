@@ -16,7 +16,7 @@ class BantenModels {
   final List<String> category;
   final String name;
   final String imageUrl;
-  final Enum sugihan;
+  final bool sugihan;
   final List<String> listBanten;
   final List<String> ingredients;
   final String executionTime;

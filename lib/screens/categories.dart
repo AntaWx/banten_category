@@ -1,21 +1,31 @@
 import 'package:banten_apps/data/dummy_category.dart';
+import 'package:banten_apps/models/banten_models.dart';
 import 'package:banten_apps/models/category.dart';
 import 'package:banten_apps/screens/banten_screen.dart';
 import 'package:banten_apps/widgets/categories_grid.dart';
 import 'package:flutter/material.dart';
 
 class Categories extends StatelessWidget {
-  const Categories({super.key});
+  const Categories(
+      {super.key,
+      required this.onToogleFavorit,
+      required this.availableBanten});
+
+  final void Function(BantenModels bantenModels) onToogleFavorit;
+  final List<BantenModels> availableBanten;
 
   void _selectCategory(BuildContext context, Category category) {
-    final filteredCategory = listOfBanten
+    final filteredCategory = availableBanten
         .where((banten) => banten.category.contains(category.id))
         .toList();
     Navigator.push(
         context,
         MaterialPageRoute(
-            builder: (ctx) =>
-                BantenScreen(title: category.title, banten: filteredCategory)));
+            builder: (ctx) => BantenScreen(
+                  title: category.title,
+                  banten: filteredCategory,
+                  onToogleFavorit: onToogleFavorit,
+                )));
   }
 
   @override

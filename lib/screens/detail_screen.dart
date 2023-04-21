@@ -10,12 +10,14 @@ class DetailScreen extends StatelessWidget {
     required this.description,
     required this.image,
     required this.bantenModels,
+    required this.onToogleFavorites,
   });
 
   final String title;
   final List<String> description;
   final String image;
-  final List<BantenModels> bantenModels;
+  final BantenModels bantenModels;
+  final void Function(BantenModels bantenModels) onToogleFavorites;
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +30,13 @@ class DetailScreen extends StatelessWidget {
               .titleLarge!
               .copyWith(color: Colors.white),
         ),
+        actions: [
+          IconButton(
+              onPressed: () {
+                onToogleFavorites(bantenModels);
+              },
+              icon: const Icon(Icons.star))
+        ],
       ),
       body: SingleChildScrollView(
         child: Padding(
