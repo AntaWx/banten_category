@@ -8,7 +8,7 @@ class BantenSebelumRecord {
   String toString() => name;
 }
 
-enum BantenSebelum { sugihan, pengerebuan, penyajan, penampan }
+enum BantenSebelum { sugihan, pengerebuan, penyajan, penampan, manis }
 
 extension BantenSebelumExtension on BantenSebelum {
   BantenSebelumRecord toRecord() {
@@ -18,9 +18,12 @@ extension BantenSebelumExtension on BantenSebelum {
       case BantenSebelum.pengerebuan:
         return const BantenSebelumRecord("pengerebuan", "Sebelum Galungan");
       case BantenSebelum.penyajan:
-        return const BantenSebelumRecord("penyajan", "Sesudah Galungan");
+        return const BantenSebelumRecord("penyajan", "sebelum Galungan");
       case BantenSebelum.penampan:
-        return const BantenSebelumRecord("penampan", "Sesudah Galungan");
+        return const BantenSebelumRecord("penampan", "sebelum Galungan");
+      case BantenSebelum.manis:
+        return const BantenSebelumRecord(
+            'manis galungan kuningan', 'setelah galungan');
     }
   }
 }
@@ -66,7 +69,7 @@ extension ExecutionTimeExtention on Execution {
       case Execution.sebelum:
         return const ExecutionTime('sebelum galungan');
       case Execution.sesudah:
-        return const ExecutionTime('sesudah galungan');
+        return const ExecutionTime('setelah galungan');
       case Execution.saat:
         return const ExecutionTime('saat galungan');
     }

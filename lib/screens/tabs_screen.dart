@@ -10,7 +10,7 @@ import 'package:get/get.dart';
 const kInitialFilter = {
   Filter.sugihan: false,
   Filter.sebelumGalungan: false,
-  Filter.prioritas: false
+  Filter.setelahGalungan: false
 };
 
 class TabsScreen extends StatefulWidget {
@@ -81,8 +81,15 @@ class _TabsScreenState extends State<TabsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    //filter banten
     final availableBanten = listOfBanten.where((banten) {
       if (_selectedFilter[Filter.sugihan]! && !banten.sugihan) {
+        return false;
+      } else if (_selectedFilter[Filter.sebelumGalungan]! &&
+          !banten.sebelumGalungan) {
+        return false;
+      } else if (_selectedFilter[Filter.setelahGalungan]! &&
+          !banten.setelahGalungan) {
         return false;
       }
       return true;

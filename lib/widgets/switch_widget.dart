@@ -40,7 +40,7 @@ class _SwitchWidgetState extends State<SwitchWidget> {
       value: _isSwitched,
       onChanged: widget.onChanged,
       title: Text(
-        widget.title,
+        widget.title, 
         style: Theme.of(context)
             .textTheme
             .titleLarge!

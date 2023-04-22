@@ -9,7 +9,9 @@ class BantenModels {
       required this.ingredients,
       required this.executionTime,
       required this.dificulty,
+      required this.sebelumGalungan,
       required this.affordability,
+      this.setelahGalungan = false,
       required this.description});
 
   final String id;
@@ -17,6 +19,8 @@ class BantenModels {
   final String name;
   final String imageUrl;
   final bool sugihan;
+  final bool sebelumGalungan;
+  final bool setelahGalungan;
   final List<String> listBanten;
   final List<String> ingredients;
   final String executionTime;

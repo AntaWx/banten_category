@@ -3,7 +3,7 @@
 import 'package:banten_apps/widgets/switch_widget.dart';
 import 'package:flutter/material.dart';
 
-enum Filter { sugihan, sebelumGalungan, prioritas }
+enum Filter { sugihan, sebelumGalungan, setelahGalungan }
 
 class FilterScreen extends StatefulWidget {
   const FilterScreen({super.key, required this.currentFilter});
@@ -24,7 +24,7 @@ class _FilterScreenState extends State<FilterScreen> {
     super.initState();
     _sugihan = widget.currentFilter[Filter.sugihan]!;
     _sebelumGalungan = widget.currentFilter[Filter.sebelumGalungan]!;
-    _prioritas = widget.currentFilter[Filter.prioritas]!;
+    _prioritas = widget.currentFilter[Filter.setelahGalungan]!;
   }
 
   @override
@@ -40,7 +40,7 @@ class _FilterScreenState extends State<FilterScreen> {
             {
               Filter.sugihan: _sugihan,
               Filter.sebelumGalungan: _sebelumGalungan,
-              Filter.prioritas: _prioritas,
+              Filter.setelahGalungan: _prioritas,
             },
           );
           return false;
@@ -72,8 +72,8 @@ class _FilterScreenState extends State<FilterScreen> {
               },
             ),
             SwitchWidget(
-              title: 'prioritas',
-              subtitle: 'type of prioritas',
+              title: 'setelah galungan / kuningan',
+              subtitle: 'type of setelah galungan dan setelah kuningan',
               value: _prioritas,
               onChanged: (value) {
                 setState(
