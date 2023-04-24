@@ -5,11 +5,10 @@ import 'package:banten_apps/widgets/banten_grid.dart';
 import 'package:flutter/material.dart';
 
 class BantenScreen extends StatelessWidget {
-  const BantenScreen({super.key, this.title, required this.banten, required this.onToogleFavorit});
+  const BantenScreen({super.key, this.title, required this.banten,});
 
   final String? title;
   final List<BantenModels> banten;
-  final void Function(BantenModels bantenModels) onToogleFavorit;
 
   void _onSelectBanten(BuildContext context, BantenModels bantenModels) {
     final filteredBanten =
@@ -22,7 +21,6 @@ class BantenScreen extends StatelessWidget {
                   description: filteredBanten.description,
                   image: filteredBanten.imageUrl,
                   bantenModels: filteredBanten,
-                  onToogleFavorites: onToogleFavorit,
                 )));
   }
 

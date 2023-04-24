@@ -3,6 +3,7 @@ import 'package:banten_apps/screens/tabs_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 final theme = ThemeData(
     useMaterial3: true,
@@ -13,7 +14,7 @@ final theme = ThemeData(
     textTheme: GoogleFonts.acmeTextTheme());
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {

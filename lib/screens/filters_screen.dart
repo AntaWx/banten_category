@@ -1,90 +1,54 @@
-// import 'package:banten_apps/screens/tabs_screen.dart';
-// import 'package:banten_apps/widgets/drawer_main.dart';
 import 'package:banten_apps/widgets/switch_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:banten_apps/providers/filters_providers.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-enum Filter { sugihan, sebelumGalungan, setelahGalungan }
-
-class FilterScreen extends StatefulWidget {
-  const FilterScreen({super.key, required this.currentFilter});
-
-  final Map<Filter, bool> currentFilter;
-
-  @override
-  State<FilterScreen> createState() => _FilterScreenState();
-}
-
-class _FilterScreenState extends State<FilterScreen> {
-  bool _sugihan = false;
-  bool _sebelumGalungan = false;
-  bool _prioritas = false;
+class FilterScreen extends ConsumerWidget {
+  const FilterScreen({
+    super.key,
+  });
 
   @override
-  void initState() {
-    super.initState();
-    _sugihan = widget.currentFilter[Filter.sugihan]!;
-    _sebelumGalungan = widget.currentFilter[Filter.sebelumGalungan]!;
-    _prioritas = widget.currentFilter[Filter.setelahGalungan]!;
-  }
+  Widget build(BuildContext context, WidgetRef ref) {
+    final activeFilters = ref.watch(filteredBanten);
 
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('your filters'),
       ),
-      body: WillPopScope(
-        onWillPop: () async {
-          Navigator.pop(
-            context,
-            {
-              Filter.sugihan: _sugihan,
-              Filter.sebelumGalungan: _sebelumGalungan,
-              Filter.setelahGalungan: _prioritas,
+      body: Column(
+        children: [
+          SwitchWidget(
+            title: 'sugihan',
+            subtitle: 'type of sugihan',
+            value: activeFilters[Filter.sugihan]!,
+            onChanged: (isChecked) {
+              ref
+                  .read(filteredBanten.notifier)
+                  .setFilter(Filter.sugihan, isChecked);
             },
-          );
-          return false;
-        },
-        child: Column(
-          children: [
-            SwitchWidget(
-              title: 'sugihan',
-              subtitle: 'type of sugihan',
-              value: _sugihan,
-              onChanged: (value) {
-                setState(
-                  () {
-                    _sugihan = value;
-                  },
-                );
-              },
-            ),
-            SwitchWidget(
-              title: 'sebelum galungan',
-              subtitle: 'type of sebelum galungan',
-              value: _sebelumGalungan,
-              onChanged: (value) {
-                setState(
-                  () {
-                    _sebelumGalungan = value;
-                  },
-                );
-              },
-            ),
-            SwitchWidget(
-              title: 'setelah galungan / kuningan',
-              subtitle: 'type of setelah galungan dan setelah kuningan',
-              value: _prioritas,
-              onChanged: (value) {
-                setState(
-                  () {
-                    _prioritas = value;
-                  },
-                );
-              },
-            ),
-          ],
-        ),
+          ),
+          SwitchWidget(
+            title: 'sebelum galungan',
+            subtitle: 'type of sebelum galungan',
+            value: activeFilters[Filter.sebelumGalungan]!,
+            onChanged: (isChecked) {
+              ref
+                  .read(filteredBanten.notifier)
+                  .setFilter(Filter.sebelumGalungan, isChecked);
+            },
+          ),
+          SwitchWidget(
+            title: 'setelah galungan / kuningan',
+            subtitle: 'type of setelah galungan dan setelah kuningan',
+            value: activeFilters[Filter.setelahGalungan]!,
+            onChanged: (isChecked) {
+              ref
+                  .read(filteredBanten.notifier)
+                  .setFilter(Filter.setelahGalungan, isChecked);
+            },
+          ),
+        ],
       ),
     );
   }

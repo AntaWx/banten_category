@@ -8,10 +8,7 @@ import 'package:flutter/material.dart';
 class Categories extends StatelessWidget {
   const Categories(
       {super.key,
-      required this.onToogleFavorit,
       required this.availableBanten});
-
-  final void Function(BantenModels bantenModels) onToogleFavorit;
   final List<BantenModels> availableBanten;
 
   void _selectCategory(BuildContext context, Category category) {
@@ -24,7 +21,6 @@ class Categories extends StatelessWidget {
             builder: (ctx) => BantenScreen(
                   title: category.title,
                   banten: filteredCategory,
-                  onToogleFavorit: onToogleFavorit,
                 )));
   }
 
