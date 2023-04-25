@@ -20,12 +20,15 @@ class BantenGridItem extends StatelessWidget {
           onTap: onSelectBanten,
           child: Stack(
             children: [
-              FadeInImage(
-                placeholder: MemoryImage(kTransparentImage),
-                image: NetworkImage(bantenModels.imageUrl),
-                fit: BoxFit.cover,
-                height: 250,
-                width: double.infinity,
+              Hero(
+                tag: bantenModels.id,
+                child: FadeInImage(
+                  placeholder: MemoryImage(kTransparentImage),
+                  image: NetworkImage(bantenModels.imageUrl),
+                  fit: BoxFit.cover,
+                  height: 250,
+                  width: double.infinity,
+                ),
               ),
               Positioned(
                   bottom: 0,
